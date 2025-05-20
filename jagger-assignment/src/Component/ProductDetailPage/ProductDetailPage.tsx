@@ -140,7 +140,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ data }) => {
                             </ul>
 
                             <div className={styles.featuresHeader}>Attachments</div>
-                            <ul>
+                            <div style={{margin: '8px 22px'}}>
                                 {article.attachments?.map((att, idx) => (
                                     <div key={idx}>
                                         <img src={attachmentIcon} alt='attachmentIcon' className={styles.attachIcon} />
@@ -153,7 +153,7 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ data }) => {
                                         </a>
                                     </div>
                                 ))}
-                            </ul>
+                            </div>
 
                             <div className={styles.featuresHeader}>Keywords</div>
                             <div className={styles.keywordsContainer}>
@@ -181,14 +181,14 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ data }) => {
                             </ul>
 
                             <div className={styles.featuresHeader}>Price Breaks</div>
-                            <ul>
+                            <div style={{margin: '8px 22px'}}>
                                 {article.price_breaks &&
                                     Object.entries(article.price_breaks).map(([qty, price], idx) => (
                                         <div className={styles.priceBreak} key={idx}>{`ex ${qty} ${article.unit} - ${price.toFixed(
                                             2
                                         )} ${article.currency}/${article.unit}`}</div>
                                     ))}
-                            </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
